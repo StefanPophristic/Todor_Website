@@ -15,9 +15,9 @@ layout: base
   {%- for movie in allMovies -%}
     {%- if movie.movieID != null -%}
         <div class="home-page-grid-item">
-          <a href="/movies/{{ movie.movieID}}.html">
+          <a href="/Todor_Website/movies/{{ movie.movieID}}.html">
             <div class ="movie-posters">
-              <img src="../images/movie_posters/{{ movie.movieID }}.jpg" alt="Girl in a jacket">
+              <img src="../images/movie_posters/{{ movie.movieID }}.jpg" alt="Girl in a jacket" class="home-page-movie-image">
             </div>
           </a>
         </div>
