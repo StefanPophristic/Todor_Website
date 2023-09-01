@@ -1,0 +1,28 @@
+---
+layout: base
+---
+
+<html>
+  <body>
+    <p>{{content}}<p>
+
+      {%- assign allMovies = site.data.movies -%}
+
+      {%- for movie in allMovies -%}
+        {%- if movie.movieID == page.movieID -%}
+
+        <!-- All movie relevnat information and formatting is printed here -->
+
+        <p>{{movie.name}}<p>
+        <p>{{movie.year}}<p>
+        <p>{{movie.url}}<p>
+
+        {%- for awards in movie.Awards -%}
+          <!-- figure out how to print awards -->
+        {%- endfor -%}
+
+
+        {%- endif -%}
+      {%- endfor -%}
+  </body>
+</html>
