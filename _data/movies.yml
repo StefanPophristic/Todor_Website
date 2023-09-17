@@ -1,31 +1,90 @@
-- name: Oleander
-  year: 2017
-  movieID: oleander
-  url: https://www.youtube.com/watch?v=2HbgCZn1aaQ
+- name: Dandies of LA
+  year: 2023
+  movieID: Dandies
+  url: fX-diKzoh5Y?si=-d5wWBpM37VAbvD2
+  description: Two men on their way to rob a deli storing cartel bricks, cross paths with an older man on the way to the same deli but to buy a sandwich.
+  actors: "Brandon Bates, Dylan Marusich, and Lonnie Lewis"
+  shotBy: Lucas Yu
+  editedBy: Todor Pophristic
+  writtenBy: Todor Pophristic
+  directedBy: Todor Pophristic
   Awards:
-    - Award1
-    - Award2
 
-- name: 21st Century Spunk A Collection of Short Films
+- name: tête-à-tête
+  year: 2023
+  description: A father son relationship is tested after the father’s newest scheme goes exactly as planned.
+  movieID: Tet
+  actors: "Todor Pophristic, Milan Pophristic, and Krish Khanna"
+  editedBy: Finn Neuneier
+  shotBy: Finn Neuneier
+  writtenBy: Todor Pophristic
+  directedBy: Todor Pophristic
+  url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=237
+  Awards:
+    Official Selection:
+      - Sound and Music Film Festival Makedonska 21; Belgrade, Serbia, 2023
+      - 1:11 High School Film Festival; North Carolina, USA, 2023
+      - Princeton Film Festival; New Jersey, USA, 2023
+    Semi-Finalist:
+      - Indie Short Fest, Los Angeles Interional Film Festival, California USA, 2023
+
+- name: Laughing Matter
+  year: 2023
+  movieID: LaughingMatter
+  description: "The mother of a lost child receives a disturbing phone call regarding her daughter's location. "
+  url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc
+  actors: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
+  editedBy: Finn Neuneier
+  shotBy: Todor Pophristic and Finn Neuneier
+  writtenBy: Todor Pophristic
+  directedBy: Todor Pophristic
+  Awards:
+    Winner:
+      - Boulder International Film Festival; Colorado, USA, 2023
+    Finalist:
+      - "RTF MEDIA FEST + AWARDS Presented by the Rowan Radio/TV/Film Department 2023; New Jersey, USA, 2023"
+    Semi-Finalist:
+      - Indie Short Fest, Los Angeles International Film Festival; California, USA, 2023
+    Official Selection:
+      - "Newport Beach Film Festival; California, USA, 2023"
+      - "SIFF's 20th Anniversary presents our High School Film Competition; New York, USA, 2023"
+
+- name: Manifest Mannequin_(1987)
   year: 2022
-  movieID: spunk
-  url: https://www.youtube.com/watch?v=kAJx1TaDj3w
+  description: "Shrouded in delusion, a man in love with a mannequin prepares for a job interview, with a subsequent descent into madness. "
+  movieID: Mannequin
+  url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=660
+  actors: "Krish Khanna and Wolfgang Shrieder"
+  editedBy: Finn Neuneier
+  shotBy: Todor Pophristic and Finn Neuneier
+  writtenBy: Todor Pophristic
+  directedBy: Todor Pophristic
   Awards:
-    - Award3
-    - Award4
 
-- name: movie3
-  year: 2033
-  movieID: movie3
-  url: https://www.youtube.com/watch?v=kAJx1TaDj3w
+- name: Babe in Arms
+  year: 2023
+  movieID: BabeInArms
+  url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=1240
+  description: "A desperate man calls family and friends in need of money or a place to stay."
+  actors: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
+  editedBy: Finn Neuneier
+  shotBy: Finn Neuneier
+  writtenBy: Todor Pophristic
+  directedBy: Todor Pophristic
   Awards:
-    - Award33
-    - Award333
+    Official Selection:
+      - All American High School Film Festival; New York, USA, 2023
+    Semi-Finalist:
+      - Indie Short Fest, Los Angeles International Film Festival; California, USA, 2023
 
-- name: movie4
-  year: 2044
-  movieID: movie4
-  url: https://www.youtube.com/watch?v=kAJx1TaDj3w
+- name: Oleander
+  year: 2021
+  movieID: Oleander
+  url: 2HbgCZn1aaQ?si=HVXWu4udj2uxOGzj
+  description: "Sean finds it more and more difficult to lose himself in escapism as the obstacles around him become too much to bear."
+  actors: "Alexander Margulis, Elias Gitterman, Emma Mcmahon, James Weinstien, and Alkis Siddosis"
+  shotBy: "Finn Neuneier"
+  editedBy: Finn Neuneier
+  writtenBy: Todor Pophristic
+  directedBy: Todor Pophristic
   Awards:
-    - Award44
-    - Award444

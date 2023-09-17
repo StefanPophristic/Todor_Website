@@ -1,0 +1,19 @@
+- title: This is my Photo
+  medium: Photograph
+  year: 2023
+  picture: pic1
+
+- title: this is another Photo
+  medium: Photograph
+  year: 2021
+  picture: pic2
+
+- title: This is my Photo3
+  medium: Photograph
+  year: 2020
+  picture: pic3
+
+- title: this is another Photo4
+  medium: Photograph
+  year: 2021
+  picture: pic4

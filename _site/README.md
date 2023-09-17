@@ -9,6 +9,55 @@
   <p><img src="/screenshot.png"/></p>
 </div>
 
+
+
+# Instructions for Todor
+
+## To Add a movie
+1. Add the movie to _data>menu.yml
+
+It should be in the style of:
+```
+- title: [Movie Name]
+  url: /movies/[MovieID].html
+```
+
+The order in which the movies are listed here is the order in which the movies will appear on the drop down menu.
+
+A "movieID" is a just a dummy variable which uniquely identifies the all related movie information for the website. Make sure it has no spaces or weird characters. The next several steps will likewise make reference to the movieID.
+
+2. Add your movie to _data > movies.yml
+
+Just copy and paste the information formatting from one of the other movies. Sometimes certain characters (such as semicolons or colons) require special formatting, and if are not formatted correctly might lead to a crash.
+
+The order in which the movies are listed here is the order in which the movies will appear on the front page.
+
+3. Add the movie poster to images > movie_posters
+
+Make sure the poster is the same size as the other posters.
+
+Label the image using the movieID you used in step 1 above.
+
+4. Create a file in the movies folder
+
+The file should be named "[movieID].md".
+
+The file should contain the following stuff in it:
+
+```
+---
+layout: movie
+movieID: LaughingMatter
+---
+```
+You can copy and paste that from any of the other markdown (.md) files in that folder, and just replace the movieID with a new unique movieID.
+
+## To add event information
+
+## To add something to Other Art
+
+# Program Information
+
 ## Installation
 
 Add this line to your Jekyll site's Gemfile:

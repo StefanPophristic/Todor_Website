@@ -1,0 +1,20 @@
+- title: About
+  url: /about/
+- title: Events
+  url: /events/
+- title: Movies
+  sublinks:
+    - title: Dandies of LA
+      url: /movies/Dandies.html
+    - title: tête-à-tête
+      url: /movies/Tet.html
+    - title: Laughing Matter
+      url: /movies/LaughingMatter.html
+    - title: Manifest Mannequin_(1987)
+      url: /movies/Mannequin.html
+    - title: Babe in Arms
+      url: /movies/BabeInArms.html
+    - title: Oleander
+      url: /movies/Oleander.html
+- title: Other Art
+  url: /otherart/

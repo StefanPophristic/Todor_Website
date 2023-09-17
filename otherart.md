@@ -4,4 +4,4 @@ title: Other Art
 permalink: /otherart/
 ---
 
-Other Art
+This page is currently under construction. Please come back later for more art by Todor Pophristic. 
