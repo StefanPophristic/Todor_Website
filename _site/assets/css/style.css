@@ -743,6 +743,25 @@ table td {
     width: calc(50% - (10px / 2));
   }
 }
+.auto-resizable-iframe {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.auto-resizable-iframe > div {
+  position: relative;
+  padding-bottom: 50%;
+  height: 0px;
+}
+
+.auto-resizable-iframe iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
 .movie-posters {
   width: 100%;
   columns: 700px 3;
