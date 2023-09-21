@@ -1,0 +1,4 @@
+---
+layout: movie
+movieID: mannequin
+---
