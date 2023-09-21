@@ -1,4 +1,0 @@
----
-layout: movie
-movieID: oleander
----
