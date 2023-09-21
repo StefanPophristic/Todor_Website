@@ -1,4 +1,4 @@
 ---
 layout: movie
-movieID: Tet
+movieID: tet
 ---

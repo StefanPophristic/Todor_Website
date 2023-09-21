@@ -1,4 +1,4 @@
 ---
 layout: movie
-movieID: Mannequin
+movieID: mannequin
 ---

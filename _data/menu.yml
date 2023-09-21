@@ -5,16 +5,16 @@
 - title: Movies
   sublinks:
     - title: Dandies of LA
-      url: /movies/Dandies.html
+      url: /movies/dandies.html
     - title: tête-à-tête
-      url: /movies/Tet.html
+      url: /movies/tet.html
     - title: Laughing Matter
-      url: /movies/LaughingMatter.html
+      url: /movies/laughingmatter.html
     - title: Manifest Mannequin_(1987)
       url: /movies/Mannequin.html
     - title: Babe in Arms
-      url: /movies/BabeInArms.html
+      url: /movies/babeinarms.html
     - title: Oleander
-      url: /movies/Oleander.html
+      url: /movies/oleander.html
 - title: Other Art
   url: /otherart/
