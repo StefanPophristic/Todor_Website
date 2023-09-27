@@ -2,9 +2,13 @@
 layout: base
 ---
 
+<!-- The html code that formats each individual event is found under _includes/events_individual.html -->
+<!-- This code loops through all the events found in _data/events.yml, and calls on events_individual.html to display them-->
+
 <html>
   <body>
         {%- assign allEvents = site.data.events -%}
+        {% assign today_date = 'now' | date: '%D' %}
 
         <br>
         <h2> Upcoming Events </h2>
@@ -12,10 +16,9 @@ layout: base
 
         {%- for event in allEvents -%}
 
-          {% assign today_date = 'now' | date: '%s' %}
-          {% assign event_date = event.date | date: '%s' %}
+          {% assign event_date = event.date | date: '%D' %}
 
-          {% if event_date > today_date %}
+          {% if event_date >= today_date %}
 
             {% include events_individual.html %}
 
@@ -25,14 +28,14 @@ layout: base
 
 
         <h2> Past Events </h2>
+
         {%- for event in allEvents -%}
 
-          {% assign today_date = 'now' | date: '%s' %}
-          {% assign event_date = event.date | date: '%s' %}
+          {% assign event_date = event.date | date: '%D' %}
 
           {% if today_date > event_date %}
 
-            {% include events_individual.html %}
+              {% include events_individual.html %}
 
           {%- endif -%}
 

@@ -3,7 +3,7 @@
 </div>
 
 
-{%- if event_date > today_date -%}
+{%- if event_date >= today_date -%}
   <p><b>{{ event.date | date: "%b %d" }}, {{ event.location }}</b><p>
 {%- endif -%}
 
