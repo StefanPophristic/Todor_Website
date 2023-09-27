@@ -19,7 +19,7 @@ layout: base
           {% if event_date > today_date %}
 
               <div>
-                <img src="/images/events/{{ event.image }}.png" alt="Event Image" id="eventImage">
+                <img src="/images/events/{{ event.image }}.png" alt="Event Image" class="eventImage">
               </div>
 
               <p><b>{{ event.date | date: "%b %d" }}, {{ event.location }}</b><p>
@@ -45,7 +45,7 @@ layout: base
           {% if today_date > event_date %}
 
               <div>
-                <img src="/images/events/{{ event.image }}.png" alt="Event Image" id="eventImage">
+                <img src="/images/events/{{ event.image }}.png" alt="Event Image" class="eventImage">
               </div>
 
               <p><b>{{ event.date | date: "%b %d. %Y" }}, {{ event.location }}</b><p>
