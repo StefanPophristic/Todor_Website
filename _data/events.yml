@@ -1,15 +1,6 @@
 # Keep events in the order in which you want them to appear
 
 - name: Ixcanul ("Volcano") Film Screening & Discussion
-  date: 2023-09-27
-  location: Princeton, NJ
-  link: 'https://princetonlibrary.libnet.info/event/9222224'
-  description: "In this award-winning drama, danger arises from a marriage arranged for a Kaqchikel girl living in Guatemala. Following the screening, <a href=\"https://as.nyu.edu/faculty/dylon-l-robbins.html\">Dylon Robbins</a>, associate professor and director, Center for Latin American and Caribbean Studies at NYU, will give a talk.
-  <br><br>
-  Organized by Todor Pophristic and Leone Robbins in conjunction with the Princeton Public Library"
-  image: ixcanul_poster
-
-- name: Ixcanul ("Volcano") Film Screening & Discussion
   date: 2023-10-12
   location: Princeton, NJ
   link: 'https://princetonlibrary.libnet.info/event/9222224'
