@@ -13,6 +13,7 @@
 
 # Instructions for Todor
 
+
 ## To Add a movie
 1. Add the movie to _data>menu.yml
 
@@ -54,7 +55,76 @@ You can copy and paste that from any of the other markdown (.md) files in that f
 
 ## To add event information
 
+Navigate to _data/events.yml. Add your event using the following formatting:
+
+```
+- name: [Name of Event]
+  date: yyy-mm-dd
+  location: [location]
+  link: '[link to event]'
+  description: "[Description to the event. You can embedd html code in order to bold/italicize/underline or link things]"
+  image: [image name without a .png ending; all images should be .png]
+```
+
+Html code that you can embedd can look like this:
+For a link: <a href=\"[link]\">[Text that should be linked]</a>
+For a line break: <br>
+etc.
+
+Add the image to of the event to images/events/[image_name].png. the 'image_name' should match the 'image' field in the events.yml file.  
+
+Events happening in the future will automatically appear under 'upcoming events' and past events will appear after 'past events'. However order within these sub-sections is entirely determined with the order in which you list them in your events.yml file. 
+
 ## To add something to Other Art
+
+## Check Changes
+
+In terminal, navigate to the root of this directory. Then type:
+
+```
+jekyll serve
+```
+
+If everything is configured correctly, you will get the following output:
+```
+Configuration file: /Users/...path to file .../Todor_Website/_config.yml
+ Theme Config file: /Users/...path to file .../Todor_Website/_config.yml
+            Source: /Users/...path to file .../Todor_Website
+       Destination: /Users/...path to file .../Todor_Website/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+       Jekyll Feed: Generating feed for posts
+                    done in 0.194 seconds.
+ Auto-regeneration: enabled for '/Users/...path to file .../Todor_Website'
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+```
+
+To see a local version of your website, copy the server address from above, and paste it into the search bar of your browser. Please note that certain things won't work in the locally running version of your website, such as the embdedded youtube videos (they won't be playable).
+
+To exit out of the running local version mode in terminal, press ctrl and c at the same time.
+
+## Publish Changes
+
+You need to be logged into your github account via your terminal.
+
+First, add all the changes by typing the following code in your terminal:
+```
+git add .
+```
+'git' specifies that this is a git command, 'add' is the command itself, and '.' means everything. If you want to upload just a single file or folder, replace the '.' with the folder and file name.
+
+Then, commit all of your changes:
+```
+git commit -m "a message goes here"
+```
+'commit' is the command to commit all your changes. "-m" specifies that everything in the following quotations is a message. You should then add a message explaining all of the changes you implemented.
+
+Then push all your changes. This sends the changes to your repo on github.com. They will automatically be published online.
+```
+git push
+```
+To check if your changes were properly published, go to your repo on github.com. Navigate to the 'Actions' tab, and check the first 'pages build and deployment' line. Click on it. If all three nodes of the work flow have a green dot next to them—everything was published properly. If there is a red dot, there was an issue. You can find what the issue is by clicking on the red dot and reading the code.
 
 # Program Information
 
