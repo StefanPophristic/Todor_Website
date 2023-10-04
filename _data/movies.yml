@@ -2,7 +2,7 @@
   year: 2023
   movieID: dandies
   url: fX-diKzoh5Y?si=-d5wWBpM37VAbvD2
-  description: Two men on their way to rob a deli storing cartel bricks, cross paths with an older man on the way to the same deli but to buy a sandwich.
+  description: Two men on their way to rob a deli storing cartel bricks cross paths with an older man on the way to the same deli but to buy a sandwich.
   actors: "Brandon Bates, Dylan Marusich, and Lonnie Lewis"
   shotBy: Lucas Yu
   editedBy: Todor Pophristic
@@ -12,7 +12,7 @@
 
 - name: tête-à-tête
   year: 2023
-  description: A father son relationship is tested after the father’s newest scheme goes exactly as planned.
+  description: A father-son relationship is tested after the father’s newest scheme goes exactly as planned.
   movieID: tet
   actors: "Todor Pophristic, Milan Pophristic, and Krish Khanna"
   editedBy: Finn Neuneier
@@ -21,17 +21,17 @@
   directedBy: Todor Pophristic
   url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=237
   Awards:
+    Semi-Finalist:
+        - Indie Short Fest, Los Angeles Interional Film Festival, California USA, 2023
     Official Selection:
       - Sound and Music Film Festival Makedonska 21; Belgrade, Serbia, 2023
       - 1:11 High School Film Festival; North Carolina, USA, 2023
-      - Princeton Film Festival; New Jersey, USA, 2023
-    Semi-Finalist:
-      - Indie Short Fest, Los Angeles Interional Film Festival, California USA, 2023
+      - Princeton Student Film Festival; New Jersey, USA, 2023
 
 - name: Laughing Matter
   year: 2023
   movieID: laughingmatter
-  description: "The mother of a lost child receives a disturbing phone call regarding her daughter's location. "
+  description: "The mother of a missing child receives a disturbing phone call regarding her daughter's location. "
   url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc
   actors: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
   editedBy: Finn Neuneier
@@ -42,11 +42,11 @@
     Winner:
       - Boulder International Film Festival; Colorado, USA, 2023
     Finalist:
-      - "RTF MEDIA FEST + AWARDS Presented by the Rowan Radio/TV/Film Department 2023; New Jersey, USA, 2023"
+      - "RTF Media Fest, Rowan University, NJ High School Competition; New Jersey, USA, 2023"
     Semi-Finalist:
       - Indie Short Fest, Los Angeles International Film Festival; California, USA, 2023
     Official Selection:
-      - "Newport Beach Film Festival; California, USA, 2023"
+      - "24th Newport Beach Film Festival; California, USA, 2023"
       - "SIFF's 20th Anniversary presents our High School Film Competition; New York, USA, 2023"
 
 - name: Manifest Mannequin_(1987)
@@ -72,10 +72,10 @@
   writtenBy: Todor Pophristic
   directedBy: Todor Pophristic
   Awards:
-    Official Selection:
-      - All American High School Film Festival; New York, USA, 2023
     Semi-Finalist:
       - Indie Short Fest, Los Angeles International Film Festival; California, USA, 2023
+    Official Selection:
+      - All American High School Film Festival; New York, USA, 2023
 
 - name: Oleander
   year: 2021
@@ -88,3 +88,8 @@
   writtenBy: Todor Pophristic
   directedBy: Todor Pophristic
   Awards:
+    Winner:
+      - Walnut Lane Film Festival; New Jersey, USA, 2021
+    Offical Selection:
+      - All American High School Film Festival; New York, USA, 2021
+      - Newark International Film Festival; New Jersey, USA, 2021
