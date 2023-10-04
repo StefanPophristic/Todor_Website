@@ -15,7 +15,7 @@
 
 
 ## To Add a movie
-1. Add the movie to _data>menu.yml
+1. **Add the movie to `_data>menu.yml`**
 
 It should be in the style of:
 ```
@@ -25,23 +25,23 @@ It should be in the style of:
 
 The order in which the movies are listed here is the order in which the movies will appear on the drop down menu.
 
-A "movieID" is a just a dummy variable which uniquely identifies the all related movie information for the website. Make sure it has no spaces or weird characters. The next several steps will likewise make reference to the movieID.
+A `movieID` is a just a dummy variable which uniquely identifies the all related movie information for the website. Make sure it has no spaces or weird characters. The next several steps will likewise make reference to the `movieID`.
 
-2. Add your movie to _data > movies.yml
+2. **Add your movie to `_data > movies.yml`**
 
 Just copy and paste the information formatting from one of the other movies. Sometimes certain characters (such as semicolons or colons) require special formatting, and if are not formatted correctly might lead to a crash.
 
 The order in which the movies are listed here is the order in which the movies will appear on the front page.
 
-3. Add the movie poster to images > movie_posters
+3. **Add the movie poster to `images > movie_posters`**
 
 Make sure the poster is the same size as the other posters.
 
 Label the image using the movieID you used in step 1 above.
 
-4. Create a file in the movies folder
+4. **Create a file in the movies folder**
 
-The file should be named "[movieID].md".
+The file should be named `[movieID].md`.
 
 The file should contain the following stuff in it:
 
@@ -51,11 +51,11 @@ layout: movie
 movieID: LaughingMatter
 ---
 ```
-You can copy and paste that from any of the other markdown (.md) files in that folder, and just replace the movieID with a new unique movieID.
+You can copy and paste that from any of the other markdown (.md) files in that folder, and just replace the movieID with a new unique `movieID`.
 
 ## To add event information
 
-Navigate to _data/events.yml. Add your event using the following formatting:
+Navigate to `_data/events.yml`. Add your event using the following formatting:
 
 ```
 - name: [Name of Event]
@@ -67,13 +67,14 @@ Navigate to _data/events.yml. Add your event using the following formatting:
 ```
 
 Html code that you can embedd can look like this:
-For a link: <a href=\"[link]\">[Text that should be linked]</a>
-For a line break: <br>
+For a link: `<a href=\"[link]\">[Text that should be linked]</a>`
+For a line break: `<br>`
 etc.
+Before each quotation mark be sure to add a backwards slash!!!
 
-Add the image to of the event to images/events/[image_name].png. the 'image_name' should match the 'image' field in the events.yml file.  
+Add the image to of the event to `images/events/[image_name].png`. the `image_name` should match the `image` field in the `events.yml` file.  
 
-Events happening in the future will automatically appear under 'upcoming events' and past events will appear after 'past events'. However order within these sub-sections is entirely determined with the order in which you list them in your events.yml file. 
+Events happening in the future will automatically appear under 'upcoming events' and past events will appear after 'past events'. However order within these sub-sections is entirely determined with the order in which you list them in your `events.yml` file.
 
 ## To add something to Other Art
 
