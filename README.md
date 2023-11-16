@@ -67,9 +67,13 @@ Navigate to `_data/events.yml`. Add your event using the following formatting:
 ```
 
 Html code that you can embedd can look like this:
+
 For a link: `<a href=\"[link]\">[Text that should be linked]</a>`
+
 For a line break: `<br>`
+
 etc.
+
 Before each quotation mark be sure to add a backwards slash!!!
 
 Add the image to of the event to `images/events/[image_name].png`. the `image_name` should match the `image` field in the `events.yml` file.  
@@ -77,6 +81,8 @@ Add the image to of the event to `images/events/[image_name].png`. the `image_na
 Events happening in the future will automatically appear under 'upcoming events' and past events will appear after 'past events'. However order within these sub-sections is entirely determined with the order in which you list them in your `events.yml` file.
 
 ## To add something to Other Art
+
+TBD
 
 ## Check Changes
 
@@ -88,15 +94,15 @@ jekyll serve
 
 If everything is configured correctly, you will get the following output:
 ```
-Configuration file: /Users/...path to file .../Todor_Website/_config.yml
- Theme Config file: /Users/...path to file .../Todor_Website/_config.yml
-            Source: /Users/...path to file .../Todor_Website
-       Destination: /Users/...path to file .../Todor_Website/_site
+Configuration file: /Users/... path to file .../Todor_Website/_config.yml
+ Theme Config file: /Users/... path to file .../Todor_Website/_config.yml
+            Source: /Users/... path to file .../Todor_Website
+       Destination: /Users/... path to file .../Todor_Website/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.194 seconds.
- Auto-regeneration: enabled for '/Users/...path to file .../Todor_Website'
+ Auto-regeneration: enabled for '/Users/... path to file .../Todor_Website'
     Server address: http://127.0.0.1:4000
   Server running... press ctrl-c to stop.
 ```

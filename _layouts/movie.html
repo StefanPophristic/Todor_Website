@@ -11,7 +11,7 @@ layout: base
       {%- for movie in allMovies -%}
         {%- if movie.movieID == page.movieID -%}
 
-          <!-- All movie relevnat information and formatting is printed here -->
+          <!-- All movie relevant information and formatting is printed here -->
 
           <p style="font-size: 40px"><b>{{movie.name}}</b><p>
           <p style="font-size: 25px">{{movie.year}}<p>
@@ -31,11 +31,11 @@ layout: base
 
           {%- if movie.Awards != null -%}
 
-          <center>
-            <p style="font-size: 20px; margin-top:1.5cm;"><b>Film Festivals</b><p>
-          </center>
 
-            {%- for awardType in movie.Awards -%}
+          <p style="font-size: 20px; margin-top:1.5cm;"><b><u>Film Festivals</u></b><p>
+
+
+          {%- for awardType in movie.Awards -%}
 
               <p><b>{{awardType[0]}}</b><p>
 
@@ -47,9 +47,9 @@ layout: base
           {%- endif -%}
 
 
-          <center>
-            <p style="font-size: 20px; margin-top:1.5cm;"><b>Cast and Crew</b><p>
-          </center>
+
+          <p style="font-size: 20px; margin-top:1.5cm;"><b><u>Cast and Crew</u></b><p>
+
 
           {%- if movie.directedBy != null -%}
             <p>Directed by: <i>{{movie.directedBy}}</i><p>

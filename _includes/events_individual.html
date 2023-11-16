@@ -4,11 +4,11 @@
 
 
 {%- if event_date >= today_date -%}
-  <p><b>{{ event.date | date: "%b %d" }}, {{ event.location }}</b><p>
+  <p><b>{{ event.date | date: "%b %d, %Y" }}, {{ event.location }}</b><p>
 {%- endif -%}
 
 {%- if today_date > event_date -%}
-  <p><b>{{ event.date | date: "%b %d. %Y" }}, {{ event.location }}</b><p>
+  <p><b>{{ event.date | date: "%b %d, %Y" }}, {{ event.location }}</b><p>
 {%- endif -%}
 
 <a href="{{ event.link }}"><p><b>{{ event.name }}</b><p></a>
