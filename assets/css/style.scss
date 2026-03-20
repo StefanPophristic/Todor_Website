@@ -6,6 +6,22 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
+/* Keep mobile navigation above homepage poster grid. */
+.site-header {
+  position: relative;
+  z-index: 1000;
+}
+
+.site-nav {
+  z-index: 1001;
+}
+
+.site-nav .trigger {
+  position: relative;
+  z-index: 1002;
+  background-color: inherit;
+}
+
 // .page-content {
 //   background-color:black;
 // }
@@ -66,6 +82,14 @@
     grid-gap: 20px;
   }
 
+@media screen and (max-width: 600px) {
+  .home-page-grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 15px;
+  }
+}
+
 .home-page-grid-item {
     text-align: center;
     position: relative;
@@ -112,6 +136,24 @@
     transform: translate(-50%, -50%);
     font-size: 150%;
     color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .home-page-grid-item .home-page-movie-image {
+    opacity: 0.5;
+    transform: scale(1.02);
+    filter: grayscale(100%);
+  }
+
+  .home-page-grid-item .home-page-movie-name {
+    opacity: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150%;
+    color: white;
+  }
 }
 
 
@@ -161,3 +203,11 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+@media screen and (max-width: 600px) {
+  /* On mobile, use Movies as a direct link and hide hover dropdown list. */
+  .dropdown .dropdown-content,
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+}
