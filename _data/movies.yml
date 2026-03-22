@@ -1,6 +1,6 @@
 - name: Stallion
   year: 2026
-  movieID: Stallion
+  movieID: stallion
   role: Director, Writer
   url: false
   stills: true
@@ -18,7 +18,7 @@
 
 - name: Grimaldi
   year: 2026
-  movieID: Grimaldi
+  movieID: grimaldi
   role: Producer, Actor, Set/Costume Designer
   url: false
   stills: true
@@ -38,7 +38,7 @@
 
 - name: Bobo
   year: 2025
-  movieID: Bobo
+  movieID: bobo
   role: Co-Director, Co-Writer
   url: 29wQ68tFw1M?si=faoiUBNQ0QW5yeBb
   stills: false
@@ -56,7 +56,7 @@
 
 - name: True Story
   year: 2024
-  movieID: True
+  movieID: true
   role: Director, Editor
   url: Z0keYmcL7Tc?si=6mCiJdSdHhI6e2pK&amp
   description: True stories from Harlem and around NYC. An experimental documentary.
