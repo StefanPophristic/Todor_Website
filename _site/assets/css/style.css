@@ -857,9 +857,18 @@ table td {
   }
 }
 @media screen and (max-width: 1099px) {
+  /* Allow the mobile nav dropdown to paint below the header */
+  .site-header,
+  .site-header .wrapper.site-header-inner {
+    overflow: visible;
+  }
+  /*
+   * Three columns: empty 1fr | title (auto) | menu — left and right tracks match,
+   * so the name sits on the true viewport center (not between the left edge and the icon).
+   */
   .site-header-inner {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     min-height: 108px;
   }
@@ -868,11 +877,15 @@ table td {
     display: none !important;
   }
   .site-title {
-    flex: 1 1 auto;
-    padding-right: 45px;
-    line-height: 108px;
-    grid-column: auto;
+    grid-column: 2;
+    grid-row: 1;
     justify-self: center;
+    align-self: center;
+    flex: none;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 108px;
+    max-width: min(100%, 100vw - 7rem); /* keep long titles from colliding with menu */
   }
   /*
    * Anchor the top of the control (don’t vertically center the whole nav box).
@@ -881,16 +894,22 @@ table td {
    */
   .site-header .site-nav--mobile {
     display: block;
-    position: absolute !important;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    position: relative !important;
     float: none !important;
-    right: clamp(10px, 2.5vw, 18px);
-    top: calc(50% - 18px); /* ~half of Minima’s 36px label; keeps icon row visually centered */
+    right: auto !important;
+    top: auto !important;
     transform: none !important;
     z-index: 1001;
     background-color: #1e1e1e;
     border: 1px solid #444;
     border-radius: 5px;
     text-align: right;
+    /* Let the dropdown extend below the header; don’t clip over page content */
+    overflow: visible;
   }
   /*
    * Minima at min-width: 600px hides label + .menu-icon so “desktop” nav shows inline.
@@ -907,8 +926,20 @@ table td {
    * .page-link { display: inline }, which beats .site-nav--mobile .trigger { flex } and
    * forces a horizontal row. Restore hamburger + vertical list for this breakpoint range.
    */
+  /*
+   * Dropdown below the icon (absolute) so opening the menu doesn’t change the nav box height.
+   * Otherwise align-items:center on the header re-centers the whole block and the hamburger jumps up.
+   */
   .site-header .site-nav--mobile input ~ .trigger {
     display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: auto !important;
+    width: max-content;
+    min-width: 10.5rem;
+    margin-top: 0.35rem;
+    z-index: 1003;
   }
   .site-header .site-nav--mobile input:checked ~ .trigger {
     display: flex !important;
@@ -928,11 +959,7 @@ table td {
     margin: 0 !important;
   }
 }
-@media screen and (max-width: 600px) {
-  .site-header .site-nav--mobile {
-    right: clamp(8px, 2vw, 14px) !important;
-  }
-}
+/* (mobile nav sits in grid column 3; gutter comes from .wrapper padding) */
 .site-nav .trigger {
   position: relative;
   z-index: 1002;
@@ -1006,15 +1033,22 @@ table td {
 
 .site-footer .footer-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
+/* Grow the name column so .p-name hugs the true left edge (not a narrow box in the middle). */
+.site-footer .footer-author {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
 .site-footer .footer-email {
+  flex: 0 0 auto;
   text-align: right;
-  margin-left: auto;
 }
 
 .site-footer .footer-col-wrapper,
@@ -1029,12 +1063,46 @@ table td {
 }
 
 @media screen and (max-width: 599px) {
+  /*
+   * Same row when possible; long email can wrap inside its column.
+   * ≤479px: both blocks hug the right (not enough room for a clean left/right split).
+   * 480–599px: name left, email right (matches wider footer).
+   */
   .site-footer .footer-inner {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    gap: 0.35rem 1rem;
+  }
+  /* Narrow: don’t grow name column — keep both items grouped on the right */
+  .site-footer .footer-author {
+    flex: 0 1 auto;
+    text-align: right;
+    min-width: 0;
   }
   .site-footer .footer-email {
-    margin-left: 0;
+    flex: 0 0 auto;
+    text-align: right;
+    min-width: 0;
+  }
+  .site-footer .footer-email .u-email {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+@media screen and (max-width: 599px) and (min-width: 480px) {
+  .site-footer .footer-inner {
+    justify-content: flex-start;
+  }
+  .site-footer .footer-author {
+    flex: 1 1 auto;
+    text-align: left;
+  }
+  .site-footer .footer-email {
     text-align: right;
   }
 }
@@ -1616,10 +1684,6 @@ body.layout-movie .movie-page-award-line {
   z-index: 1;
 }
 
-.home-page-grid-item:hover .movie-posters::after {
-  opacity: 1;
-}
-
 /* Homepage movie tiles: full color by default; grayscale + black overlay + title on hover */
 .home-page-movie-image {
   width: 100%;
@@ -1662,6 +1726,10 @@ body.layout-movie .movie-page-award-line {
   line-height: 1.3;
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.03em;
+}
+
+.home-page-grid-item:hover .movie-posters::after {
+  opacity: 1;
 }
 
 .home-page-grid-item:hover .home-page-movie-image {

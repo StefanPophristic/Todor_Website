@@ -12,7 +12,7 @@ hide_title: true
   </div>
   <div class="contact-page-text">
     <h1 class="contact-page-title">{{ page.title | escape }}</h1>
-    <p>Based in LA</p>
+    <p>L.A. based writer and director</p>
     <p>609-681-7748</p>
     <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
   </div>
