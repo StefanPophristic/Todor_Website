@@ -24,11 +24,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Pin Bundler to Gemfile.lock "BUNDLED WITH" — mismatch often causes bundle exit code 16 in CI.
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2"
+          ruby-version: "3.2.10"
+          bundler: "2.6.9"
           bundler-cache: true
+          cache-version: 2
 
       - name: Setup Pages
         id: pages
