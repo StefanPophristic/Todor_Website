@@ -10,7 +10,7 @@ GitHub’s **default** “Jekyll” build runs in **safe mode** and **does not r
 3. After each push to **`main`** or **`master`**, open the **Actions** tab and confirm **“Deploy Jekyll site to Pages”** completes successfully (green check).
 4. Wait a minute for the site to update, then hard-refresh the live site.
 
-The workflow file is **`.github/workflows/jekyll.yml`**. It runs `bundle exec jekyll build` so **`_plugins/` runs** and movie pages exist in `_site/movies/`.
+The workflow file is **`.github/workflows/jekyll.yml`**. It runs **`npm ci`**, **`npm run generate:images`** (WebP + JPEG variants for posters and About/Contact photos), then **`bundle exec jekyll build`** so **`_plugins/` runs** and movie pages exist in `_site/movies/`.
 
 ### If your default branch has another name
 
@@ -46,8 +46,12 @@ Then use the **`relative_url`** filter for links (the home layout already uses i
 ### Quick local check
 
 ```bash
+npm install
+npm run generate:images
 bundle exec jekyll build
 ls _site/movies/*.html
 ```
+
+Run **`npm run generate:images`** whenever you add or change poster or About/Contact source images (see **README**). Without it, responsive `<picture>` URLs under `images/.../generated/` may be missing.
 
 You should see one HTML file per `movieID` in `_data/movies.yml`.

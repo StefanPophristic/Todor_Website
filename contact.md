@@ -8,7 +8,7 @@ hide_title: true
 
 <div class="contact-page-layout">
   <div class="contact-page-photo">
-    <img src="{{ '/images/contact_photo.jpeg' | relative_url }}" alt="Todor Pophristic" loading="lazy" decoding="async" />
+    {% include responsive-portrait-photo.html stem="contact_photo" alt="Todor Pophristic" %}
   </div>
   <div class="contact-page-text">
     <h1 class="contact-page-title">{{ page.title | escape }}</h1>

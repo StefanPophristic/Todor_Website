@@ -12,6 +12,6 @@ hide_title: true
     <p>A writer and director focused on creating grotesque American folklore. His pitch black comedy underlines tales of depravity, aimed at inciting self reflection from the viewer. </p> <br> <p> Todor Pophristic seeks to bastardize the beautiful and empathize with the ugly in his unique brand of nihilism.</p>
   </div>
   <div class="about-page-photo">
-    <img src="{{ '/images/about_photo.jpeg' | relative_url }}" alt="Todor Pophristic" loading="lazy" decoding="async" />
+    {% include responsive-portrait-photo.html stem="about_photo" alt="Todor Pophristic" %}
   </div>
 </div>

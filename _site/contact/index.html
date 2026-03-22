@@ -82,7 +82,12 @@
         <article class="post"><div class="post-content">
     <div class="contact-page-layout">
   <div class="contact-page-photo">
-    <img src="/images/contact_photo.jpeg" alt="Todor Pophristic" loading="lazy" decoding="async" />
+    <picture>
+  <source type="image/webp" srcset="/images/photos/generated/contact_photo-320w.webp 320w, /images/photos/generated/contact_photo-640w.webp 640w, /images/photos/generated/contact_photo-960w.webp 960w" sizes="(max-width: 700px) 90vw, 40vw" />
+  <source type="image/jpeg" srcset="/images/photos/generated/contact_photo-320w.jpg 320w, /images/photos/generated/contact_photo-640w.jpg 640w, /images/photos/generated/contact_photo-960w.jpg 960w" sizes="(max-width: 700px) 90vw, 40vw" />
+  <img src="/images/photos/generated/contact_photo-640w.jpg" srcset="/images/photos/generated/contact_photo-320w.jpg 320w, /images/photos/generated/contact_photo-640w.jpg 640w, /images/photos/generated/contact_photo-960w.jpg 960w" sizes="(max-width: 700px) min(90vw, 22rem), min(26rem, 40vw)" alt="Todor Pophristic" loading="lazy" decoding="async" />
+</picture>
+
   </div>
   <div class="contact-page-text">
     <h1 class="contact-page-title">Contact</h1>

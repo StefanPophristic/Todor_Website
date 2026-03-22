@@ -1337,10 +1337,21 @@ body.layout-page .about-page-photo {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0; /* allow grid column to shrink; don’t let intrinsic img width expand the track */
+}
+
+/* picture is block-level; constrain it so a 960px-wide intrinsic asset doesn’t blow out the grid */
+body.layout-page .about-page-photo picture {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 26rem);
+  margin-inline: auto;
 }
 
 body.layout-page .about-page-photo img {
-  width: min(100%, 26rem);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 1/1;
   object-fit: cover;
   /* Anchor to bottom so the square crop removes area from the top only */
@@ -1357,8 +1368,8 @@ body.layout-page .about-page-photo img {
   body.layout-page .about-page-photo {
     justify-content: center;
   }
-  body.layout-page .about-page-photo img {
-    width: min(100%, 22rem);
+  body.layout-page .about-page-photo picture {
+    max-width: min(100%, 22rem);
   }
 }
 /* Contact page: photo left, text + lorem right (mirror of About) */
@@ -1408,10 +1419,20 @@ body.layout-page .contact-page-photo {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
+}
+
+body.layout-page .contact-page-photo picture {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 26rem);
+  margin-inline: auto;
 }
 
 body.layout-page .contact-page-photo img {
-  width: min(100%, 26rem);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: bottom;
@@ -1427,8 +1448,8 @@ body.layout-page .contact-page-photo img {
   body.layout-page .contact-page-photo {
     justify-content: center;
   }
-  body.layout-page .contact-page-photo img {
-    width: min(100%, 22rem);
+  body.layout-page .contact-page-photo picture {
+    max-width: min(100%, 22rem);
   }
 }
 /* Movie page: title left, year | role right (sizes match previous inline styles) */

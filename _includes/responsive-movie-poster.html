@@ -1,0 +1,26 @@
+{%- comment -%}
+  Expects: movie_id (must match poster filename stem in images/movie_posters/), alt, eager (optional, true for LCP image)
+{%- endcomment -%}
+{%- assign mid = include.movie_id -%}
+{%- assign base = '/images/movie_posters/generated/' | append: mid -%}
+{%- assign w400w = base | append: '-400w.webp' | relative_url -%}
+{%- assign w800w = base | append: '-800w.webp' | relative_url -%}
+{%- assign w1200w = base | append: '-1200w.webp' | relative_url -%}
+{%- assign j400 = base | append: '-400w.jpg' | relative_url -%}
+{%- assign j800 = base | append: '-800w.jpg' | relative_url -%}
+{%- assign j1200 = base | append: '-1200w.jpg' | relative_url -%}
+<picture>
+  <source type="image/webp" srcset="{{ w400w }} 400w, {{ w800w }} 800w, {{ w1200w }} 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+  <source type="image/jpeg" srcset="{{ j400 }} 400w, {{ j800 }} 800w, {{ j1200 }} 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+  <img
+    src="{{ j800 }}"
+    srcset="{{ j400 }} 400w, {{ j800 }} 800w, {{ j1200 }} 1200w"
+    sizes="(max-width: 600px) 100vw, 50vw"
+    alt="{{ include.alt | escape }}"
+    class="home-page-movie-image"
+    width="1200"
+    height="510"
+    decoding="async"
+    {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+  >
+</picture>

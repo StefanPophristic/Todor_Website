@@ -38,11 +38,18 @@ Just copy and paste the information formatting from one of the other movies. Som
 
 The order in which the movies are listed here is the order in which the movies will appear on the front page.
 
-3. **Add the movie poster to `images > movie_posters`**
+3. **Add the movie poster to `images/movie_posters/`**
 
-Make sure the poster is the same size as the other posters.
+Use the **`movieID`** as the **filename stem** (case-sensitive on Linux), e.g. `stallion.png` for `movieID: stallion`. PNG, JPEG, or WebP are fine.
 
-Label the image using the movieID you used in step 1 above.
+Then generate responsive WebP + JPEG variants for the site:
+
+```bash
+npm install   # first time only
+npm run generate:images
+```
+
+Commit the new files under **`images/movie_posters/generated/`** (or rely on CI to regenerate on deploy—run the command locally too so `jekyll serve` shows posters).
 
 4. **Create a file in the movies folder**
 

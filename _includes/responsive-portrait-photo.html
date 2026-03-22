@@ -1,0 +1,24 @@
+{%- comment -%}
+  Expects: stem (e.g. about_photo, contact_photo), alt
+  Variants from npm run generate:images: images/photos/generated/{stem}-{320|640|960}w.{webp,jpg}
+{%- endcomment -%}
+{%- assign stem = include.stem -%}
+{%- assign base = '/images/photos/generated/' | append: stem -%}
+{%- assign w320 = base | append: '-320w.webp' | relative_url -%}
+{%- assign w640 = base | append: '-640w.webp' | relative_url -%}
+{%- assign w960 = base | append: '-960w.webp' | relative_url -%}
+{%- assign j320 = base | append: '-320w.jpg' | relative_url -%}
+{%- assign j640 = base | append: '-640w.jpg' | relative_url -%}
+{%- assign j960 = base | append: '-960w.jpg' | relative_url -%}
+<picture>
+  <source type="image/webp" srcset="{{ w320 }} 320w, {{ w640 }} 640w, {{ w960 }} 960w" sizes="(max-width: 700px) 90vw, 40vw">
+  <source type="image/jpeg" srcset="{{ j320 }} 320w, {{ j640 }} 640w, {{ j960 }} 960w" sizes="(max-width: 700px) 90vw, 40vw">
+  <img
+    src="{{ j640 }}"
+    srcset="{{ j320 }} 320w, {{ j640 }} 640w, {{ j960 }} 960w"
+    sizes="(max-width: 700px) min(90vw, 22rem), min(26rem, 40vw)"
+    alt="{{ include.alt | escape }}"
+    loading="lazy"
+    decoding="async"
+  >
+</picture>
