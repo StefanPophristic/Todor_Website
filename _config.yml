@@ -24,11 +24,9 @@ minima:
   #
   # date_format: "%b %-d, %Y"
 
-  # Generate social links in footer.
+  # Footer social icons are not rendered (see _includes/footer.html).
   #
-  social_links:
-    - { platform: youtube,          user_url: "https://youtube.com/@thecurbproductions619?si=pHJ7xyG4UjzprrRC" }
-    - { platform: instagram,      user_url: "https://instagram.com/_the_curb_?igshid=MzMyNGUyNmU2YQ==" }
+  social_links: []
 
   #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
   #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }

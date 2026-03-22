@@ -12,64 +12,75 @@ layout: base
         {%- if movie.movieID == page.movieID -%}
 
           <!-- All movie relevant information and formatting is printed here -->
+          <div class="movie-page-column">
 
-          <p style="font-size: 40px"><b>{{movie.name}}</b><p>
-          <p style="font-size: 25px">{{movie.year}}<p>
+          <header class="movie-page-header">
+            <h1 class="movie-page-title">{{ movie.name }}</h1>
+            <p class="movie-page-meta">{{ movie.year }}{% if movie.role %} | {{ movie.role }}{% endif %}</p>
+          </header>
 
+          <div class="movie-page-media-and-synopsis">
+            {%- assign use_stills = false -%}
+            {%- if movie.url == false or movie.url == 'false' -%}
+              {%- if movie.stills == true or movie.stills == 'true' -%}
+                {%- assign use_stills = true -%}
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- if use_stills -%}
+            <div class="movie-page-stills" aria-label="Film stills">
+              {%- assign stills_prefix = 'images/stills/' | append: movie.movieID | append: '/' -%}
+              {%- assign sorted_static = site.static_files | sort: 'path' -%}
+              {%- for f in sorted_static -%}
+                {%- assign rp = f.path -%}
+                {%- if rp contains stills_prefix -%}
+                  {%- assign ext = f.extname | downcase -%}
+                  {%- if ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.webp' or ext == '.gif' -%}
+              <img class="movie-page-still" src="{{ rp | relative_url }}" alt="" loading="lazy" decoding="async" />
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            {%- elsif movie.url and movie.url != false and movie.url != 'false' -%}
             <div class="auto-resizable-iframe">
               <div>
-                <iframe  src="https://www.youtube.com/embed/{{movie.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/{{ movie.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
             </div>
-          <!-- <iframe src=https://www.youtube.com/embed/{{movie.url}} frameborder="0" allowfullscreen>
-          </iframe> -->
+            {%- endif -%}
+            <div class="movie-page-description-zone">
+              <div class="movie-page-description-spacer" aria-hidden="true"></div>
+              <div class="movie-page-description">{{ movie.description | markdownify }}</div>
+              <div class="movie-page-description-spacer" aria-hidden="true"></div>
+            </div>
+          </div>
 
-          <br>
-          <p>{{movie.description}}</p>
+          <div class="movie-page-details{% if movie.Awards != null %} movie-page-details--two-col{% endif %}">
+            <section class="movie-page-details-col movie-page-details-col--cast" aria-labelledby="movie-cast-heading">
+              <h2 class="movie-page-section-heading" id="movie-cast-heading">Cast and Crew</h2>
 
+              {%- if movie.credits != null and movie.credits.size > 0 -%}
+                {%- for row in movie.credits -%}
+                  <p><b>{{ row.label }}</b>: <i>{{ row.value }}</i></p>
+                {%- endfor -%}
+              {%- endif -%}
+            </section>
 
-          {%- if movie.Awards != null -%}
+            {%- if movie.Awards != null -%}
+            <aside class="movie-page-details-col movie-page-details-col--festivals" aria-labelledby="movie-festivals-heading">
+              <h2 class="movie-page-section-heading" id="movie-festivals-heading">Film Festivals</h2>
 
-
-          <p style="font-size: 20px; margin-top:1.5cm;"><b><u>Film Festivals</u></b><p>
-
-
-          {%- for awardType in movie.Awards -%}
-
-              <p><b>{{awardType[0]}}</b><p>
-
-              {%- for award in awardType[1] -%}
-                <p> &nbsp &nbsp {{award}} <p>
+              {%- for awardType in movie.Awards -%}
+                <p class="movie-page-award-tier"><b>{{ awardType[0] }}</b></p>
+                {%- for award in awardType[1] -%}
+                  <p class="movie-page-award-line">{{ award }}</p>
+                {%- endfor -%}
               {%- endfor -%}
+            </aside>
+            {%- endif -%}
+          </div>
 
-            {%- endfor -%}
-          {%- endif -%}
-
-
-
-          <p style="font-size: 20px; margin-top:1.5cm;"><b><u>Cast and Crew</u></b><p>
-
-
-          {%- if movie.directedBy != null -%}
-            <p>Directed by: <i>{{movie.directedBy}}</i><p>
-          {%- endif -%}
-
-          {%- if movie.writtenBy != null -%}
-            <p>Written by: <i>{{movie.writtenBy}}</i><p>
-          {%- endif -%}
-
-          {%- if movie.editedBy != null -%}
-            <p>Edited by: <i>{{movie.editedBy}}</i><p>
-          {%- endif -%}
-
-          {%- if movie.shotBy != null -%}
-            <p>Shot by: <i>{{movie.shotBy}}</i><p>
-          {%- endif -%}
-
-          {%- if movie.actors != null -%}
-            <p>Starring: <i>{{movie.actors}}</i><p>
-          {%- endif -%}
+          </div>
 
         {%- endif -%}
       {%- endfor -%}

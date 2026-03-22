@@ -3,34 +3,22 @@
 
   <div class="wrapper">
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col">
-        <!-- <p class="feed-subscribe">
-          <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
-            <svg class="svg-icon orange">
-              <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-            </svg><span>Subscribe</span>
-          </a>
-        </p> -->
-      {%- if site.author %}
-        <ul class="contact-list">
-          {% if site.author.name -%}
-            <li class="p-name">{{ site.author.name | escape }}</li>
-          {% endif -%}
-          {% if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-          {%- endif %}
-        </ul>
-      {%- endif %}
+    {%- if site.author -%}
+      {%- if site.author.name or site.author.email -%}
+    <div class="footer-inner">
+      <div class="footer-author">
+        {%- if site.author.name -%}
+          <span class="p-name">{{ site.author.name | escape }}</span>
+        {%- endif -%}
       </div>
-      <div class="footer-col">
-        <p style="align='right'">{{ site.description | escape }}</p>
+      <div class="footer-email">
+        {%- if site.author.email -%}
+          <a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        {%- endif -%}
       </div>
     </div>
-
-    <div class="social-links">
-      {%- include social.html -%}
-    </div>
+      {%- endif -%}
+    {%- endif -%}
 
   </div>
 

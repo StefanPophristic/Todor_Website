@@ -19,7 +19,10 @@ layout: base
             <!-- Something might need to be pre-pended here to make the links work -->
             <div class ="movie-posters">
               <img src="/images/movie_posters/{{ movie.movieID }}.png" alt="Movie Poster, Clickable link to Movie Page" class="home-page-movie-image" >
-              <p class="home-page-movie-name">{{ movie.name }}</p>
+              <div class="home-page-movie-overlay-text">
+                <p class="home-page-movie-name">{{ movie.name }}</p>
+                <p class="home-page-movie-meta">{{ movie.year }} | {{ movie.role }}</p>
+              </div>
             </div>
           </a>
         </div>

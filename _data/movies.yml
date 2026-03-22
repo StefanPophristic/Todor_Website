@@ -1,25 +1,123 @@
+- name: Stallion
+  year: 2026
+  movieID: Stallion
+  role: Director, Writer
+  url: false
+  stills: true
+  description: A boy shoots a home intruder and his father rewards him with a new car. <br><br> COMING SOON
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Producer
+      value: Anthony Parker
+    - label: Writer
+      value: Todor Pophristic
+    - label: Shot By
+      value: Athul Obla
+  Awards: null
+
+- name: Grimaldi
+  year: 2026
+  movieID: Grimaldi
+  role: Producer, Actor, Set/Costume Designer
+  url: false
+  stills: true
+  description: Two clown brothers get fired from the circus and go on a drug bender in hopes of repairing their relationship. <br><br> COMING SOON
+  credits:
+    - label: Director
+      value: Sam Walker
+    - label: Producer
+      value: Todor Pophristic
+    - label: Shot By
+      value: Ryan Mills
+    - label: Starring
+      value: "Todor Pophristic, Eli Prager, and Thomas Avona"
+    - label: Set/Costume Design
+      value: Todor Pophristic
+  Awards: null
+
+- name: Bobo
+  year: 2025
+  movieID: Bobo
+  role: Co-Director, Co-Writer
+  url: 29wQ68tFw1M?si=faoiUBNQ0QW5yeBb
+  stills: false
+  description: A developmentally disabled, gentle giant tries to break free from his manipulative uncle, who exploits him for violence and money in the world of underground boxing.
+  credits:
+    - label: Directors
+      value: "Todor Pophristic, Sam Walker"
+    - label: Producer
+      value: Will Sullivan
+    - label: Writers
+      value: "Todor Pophristic, Sam Walker"
+    - label: Shot By
+      value: Colin Fenmore
+  Awards: null
+
+- name: True Story
+  year: 2024
+  movieID: True
+  role: Director, Editor
+  url: Z0keYmcL7Tc?si=6mCiJdSdHhI6e2pK&amp
+  description: True stories from Harlem and around NYC. An experimental documentary.
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Edited by
+      value: Todor Pophristic
+  Awards: null
+
 - name: Dandies of LA
-  year: 2023
+  year: 2024
   movieID: dandies
+  role: Director, Writer, Editor
   url: fX-diKzoh5Y?si=-d5wWBpM37VAbvD2
   description: Two men on their way to rob a deli storing cartel bricks cross paths with an older man on the way to the same deli but to buy a sandwich.
-  actors: "Brandon Bates, Dylan Marusich, and Lonnie Lewis"
-  shotBy: Lucas Yu
-  editedBy: Todor Pophristic
-  writtenBy: Todor Pophristic
-  directedBy: Todor Pophristic
-  Awards:
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Edited by
+      value: Todor Pophristic
+    - label: Shot By
+      value: Lucas Yu
+    - label: Starring
+      value: "Brandon Bates, Dylan Marusich, and Lonnie Lewis"
+  Awards: null
+
+- name: Puppy
+  year: 2023
+  movieID: puppy
+  role: Director, Writer, Editor
+  url: Z0keYmcL7Tc?si=6mCiJdSdHhI6e2pK&amp;start=331
+  description: A young couple plans their future together using money from trap house robberies.
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Shot by
+      value: Finn Neuneier
+  Awards: null
 
 - name: tête-à-tête
   year: 2023
-  description: A father-son relationship is tested after the father’s newest scheme goes exactly as planned.
   movieID: tet
-  actors: "Todor Pophristic, Milan Pophristic, and Krish Khanna"
-  editedBy: Finn Neuneier
-  shotBy: Finn Neuneier
-  writtenBy: Todor Pophristic
-  directedBy: Todor Pophristic
+  role: Director
+  description: A father-son relationship is tested after the father’s newest scheme goes exactly as planned.
   url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=237
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Edited by
+      value: Finn Neuneier
+    - label: Shot by
+      value: Finn Neuneier
+    - label: Starring
+      value: "Todor Pophristic, Milan Pophristic, and Krish Khanna"
   Awards:
     Winner:
       - Cayuga Film Festival (High School Category), New York, USA, 2023
@@ -33,13 +131,20 @@
 - name: Laughing Matter
   year: 2023
   movieID: laughingmatter
+  role: Director
   description: "The mother of a missing child receives a disturbing phone call regarding her daughter's location. "
   url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc
-  actors: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
-  editedBy: Finn Neuneier
-  shotBy: Todor Pophristic and Finn Neuneier
-  writtenBy: Todor Pophristic
-  directedBy: Todor Pophristic
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Edited by
+      value: Finn Neuneier
+    - label: Shot by
+      value: Todor Pophristic and Finn Neuneier
+    - label: Starring
+      value: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
   Awards:
     Winner:
       - Boulder International Film Festival, Colorado, USA, 2023
@@ -53,26 +158,40 @@
 
 - name: Manifest Mannequin_(1987)
   year: 2022
-  description: "Shrouded in delusion, a man in love with a mannequin prepares for a job interview, with a subsequent descent into madness. "
   movieID: mannequin
+  role: Director
+  description: "Shrouded in delusion, a man in love with a mannequin prepares for a job interview, with a subsequent descent into madness. "
   url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=660
-  actors: "Krish Khanna and Wolfgang Shrieder"
-  editedBy: Finn Neuneier
-  shotBy: Todor Pophristic and Finn Neuneier
-  writtenBy: Todor Pophristic
-  directedBy: Todor Pophristic
-  Awards:
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Edited by
+      value: Finn Neuneier
+    - label: Shot by
+      value: Todor Pophristic and Finn Neuneier
+    - label: Starring
+      value: "Krish Khanna and Wolfgang Shrieder"
+  Awards: null
 
 - name: Babe in Arms
   year: 2023
   movieID: babeinarms
+  role: Director
   url: kAJx1TaDj3w?si=mGEopaW5eH-QfbSc&amp;start=1240
   description: "A desperate man calls family and friends in need of money or a place to stay."
-  actors: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
-  editedBy: Finn Neuneier
-  shotBy: Finn Neuneier
-  writtenBy: Todor Pophristic
-  directedBy: Todor Pophristic
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Edited by
+      value: Finn Neuneier
+    - label: Shot by
+      value: Finn Neuneier
+    - label: Starring
+      value: "Isabella Posada, Youssef Haroun, Leone Robbins, and Rosaury Pilier"
   Awards:
     Semi-Finalist:
       - Indie Short Fest, Los Angeles International Film Festival, California, USA, 2023
@@ -82,13 +201,20 @@
 - name: Oleander
   year: 2021
   movieID: oleander
+  role: Director
   url: 2HbgCZn1aaQ?si=HVXWu4udj2uxOGzj
   description: "Sean finds it more and more difficult to lose himself in escapism as the obstacles around him become too much to bear."
-  actors: "Alexander Margulis, Elias Gitterman, Emma Mcmahon, James Weinstien, and Alkis Siddosis"
-  shotBy: "Finn Neuneier"
-  editedBy: Finn Neuneier
-  writtenBy: Todor Pophristic
-  directedBy: Todor Pophristic
+  credits:
+    - label: Director
+      value: Todor Pophristic
+    - label: Writer
+      value: Todor Pophristic
+    - label: Edited by
+      value: Finn Neuneier
+    - label: Shot by
+      value: Finn Neuneier
+    - label: Starring
+      value: "Alexander Margulis, Elias Gitterman, Emma Mcmahon, James Weinstien, and Alkis Siddosis"
   Awards:
     Winner:
       - Walnut Lane Film Festival, New Jersey, USA, 2021

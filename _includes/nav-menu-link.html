@@ -1,0 +1,12 @@
+{%- assign href = include.link.url | relative_url -%}
+{%- assign here = page.url | relative_url -%}
+{%- assign nav_active = false -%}
+{%- if here == href -%}
+  {%- assign nav_active = true -%}
+{%- endif -%}
+{%- if include.link.url == '/' -%}
+  {%- if here == '/' or here == '/index.html' -%}
+    {%- assign nav_active = true -%}
+  {%- endif -%}
+{%- endif -%}
+<a class="page-link{% if nav_active %} page-link--current{% endif %}" href="{{ href }}"><span class="page-link-text">{{ include.link.title }}</span></a>
