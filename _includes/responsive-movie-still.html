@@ -1,27 +1,31 @@
 {%- comment -%}
-  movie_id: movies.yml movieID (folder under images/stills/)
-  stem: filename without extension (e.g. Stallion still 1)
-  still_index: 1-based; first still eager+high priority, 2–6 eager (parallel fetch), rest lazy
+  Preview: lossless 400w WebP + 400w PNG from generated/ (same masters as generate:images). Then original file on top.
 {%- endcomment -%}
 {%- assign mid = include.movie_id -%}
 {%- assign stem = include.stem -%}
 {%- assign base = '/images/stills/' | append: mid | append: '/generated/' | append: stem -%}
 {%- assign w400w = base | append: '-400w.webp' | relative_url -%}
-{%- assign w800w = base | append: '-800w.webp' | relative_url -%}
-{%- assign w1200w = base | append: '-1200w.webp' | relative_url -%}
-{%- assign j400 = base | append: '-400w.jpg' | relative_url -%}
-{%- assign j800 = base | append: '-800w.jpg' | relative_url -%}
-{%- assign j1200 = base | append: '-1200w.jpg' | relative_url -%}
-<picture>
-  <source type="image/webp" srcset="{{ w400w }} 400w, {{ w800w }} 800w, {{ w1200w }} 1200w" sizes="(max-width: 1000px) 100vw, 1000px">
-  <source type="image/jpeg" srcset="{{ j400 }} 400w, {{ j800 }} 800w, {{ j1200 }} 1200w" sizes="(max-width: 1000px) 100vw, 1000px">
+{%- assign p400w = base | append: '-400w.png' | relative_url -%}
+{%- assign still_sizes = '(max-width: 1000px) 100vw, 1000px' -%}
+{%- assign original_url = include.original_src | relative_url -%}
+<div class="progressive-image-stack progressive-image-stack--still" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="{{ w400w }} 400w" sizes="{{ still_sizes }}">
+    <source type="image/png" srcset="{{ p400w }} 400w" sizes="{{ still_sizes }}">
+    <img
+      src="{{ p400w }}"
+      alt=""
+      class="progressive-image__preview movie-page-still"
+      decoding="async"
+      {% if include.still_index == 1 %}loading="eager" fetchpriority="high"{% elsif include.still_index <= 6 %}loading="eager"{% else %}loading="lazy"{% endif %}
+    >
+  </picture>
   <img
-    src="{{ j800 }}"
-    srcset="{{ j400 }} 400w, {{ j800 }} 800w, {{ j1200 }} 1200w"
-    sizes="(max-width: 1000px) 100vw, 1000px"
+    class="progressive-image__original movie-page-still"
+    src="{{ original_url }}"
     alt=""
-    class="movie-page-still"
     decoding="async"
     {% if include.still_index == 1 %}loading="eager" fetchpriority="high"{% elsif include.still_index <= 6 %}loading="eager"{% else %}loading="lazy"{% endif %}
+    aria-hidden="true"
   >
-</picture>
+</div>

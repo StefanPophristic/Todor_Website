@@ -42,7 +42,7 @@ The order in which the movies are listed here is the order in which the movies w
 
 Use the **`movieID`** as the **filename stem** (case-sensitive on Linux), e.g. `stallion.png` for `movieID: stallion`. PNG, JPEG, or WebP are fine.
 
-Then generate responsive WebP + JPEG variants for the site:
+Then generate responsive variants: **400w** previews are **lossless WebP + PNG** (same color as your masters before the full-res overlay); larger widths stay WebP + JPEG for size. Run:
 
 ```bash
 npm install   # first time only
@@ -50,6 +50,8 @@ npm run generate:images
 ```
 
 Commit the new files under **`images/movie_posters/generated/`** (or rely on CI to regenerate on deploy—run the command locally too so `jekyll serve` shows posters).
+
+**Progressive loading (posters & stills):** the fast layer is **400px-wide lossless WebP + PNG** from `generated/` (built from the **same** source files as the full-res overlay—not the 800w/1200w JPEGs in that folder, which are unused by this UI). **`assets/js/progressive-png-overlay.js`** fades in the **original master** on top. If JavaScript is off, you still see the preview; the overlay won’t appear.
 
 **Film stills** (movies with `stills: true` and no YouTube embed): put PNG / JPEG / WebP files in **`images/stills/<movieID>/`** (same `movieID` as in `movies.yml`). Run **`npm run generate:images`** so responsive WebP + JPEG variants are written under **`images/stills/<movieID>/generated/`**. **GIF** files are left as-is (single file, not resized).
 

@@ -45,7 +45,7 @@ layout: base
                   {%- elsif ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.webp' -%}
                     {%- assign still_fn = rp | split: '/' | last -%}
                     {%- assign still_stem = still_fn | replace: f.extname, '' -%}
-              {% include responsive-movie-still.html movie_id=movie.movieID stem=still_stem still_index=still_index %}
+              {% include responsive-movie-still.html movie_id=movie.movieID stem=still_stem still_index=still_index original_src=rp %}
                   {%- endif -%}
                   {%- endunless -%}
                 {%- endif -%}

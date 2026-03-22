@@ -1258,6 +1258,15 @@ body.layout-movie .movie-page-column .movie-page-stills {
   gap: 1rem;
 }
 
+body.layout-movie .movie-page-stills .progressive-image-stack {
+  display: grid;
+  width: 100%;
+}
+
+body.layout-movie .movie-page-stills .progressive-image-stack > * {
+  grid-area: 1/1;
+}
+
 body.layout-movie .movie-page-stills picture {
   display: block;
   width: 100%;
@@ -1268,6 +1277,16 @@ body.layout-movie .movie-page-stills .movie-page-still {
   height: auto;
   display: block;
   vertical-align: middle;
+}
+
+body.layout-movie .movie-page-stills .progressive-image__original {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+body.layout-movie .movie-page-stills .progressive-image-stack--loaded .progressive-image__original {
+  opacity: 1;
 }
 
 /* Synopsis vertically centered between embed and grey line (equal flex spacers) */
@@ -1696,6 +1715,38 @@ body.layout-movie .movie-page-award-line {
   columns: initial;
   grid-template-columns: unset;
   justify-content: unset;
+}
+
+/* 400w preview + original PNG stacked (see progressive-png-overlay.js) */
+.home-page-grid-item .movie-posters .progressive-image-stack {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-page-grid-item .movie-posters .progressive-image-stack picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.home-page-grid-item .movie-posters .progressive-image__original {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.home-page-grid-item .movie-posters .progressive-image-stack--loaded .progressive-image__original {
+  opacity: 1;
 }
 
 /* Translucent black overlay (not white / low-opacity image wash) */

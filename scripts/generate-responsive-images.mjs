@@ -12,12 +12,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 
 const POSTER_WIDTHS = [400, 800, 1200];
+/** Stills: include 2000w so 2× retina (1000px CSS column) can pick ~2000px — not stuck at 1200w */
+const STILL_WIDTHS = [400, 800, 1200, 1600, 2000];
 const PHOTO_WIDTHS = [320, 640, 960];
 const JPEG_QUALITY = 82;
 const WEBP_QUALITY = 80;
-/** Slightly lower for film stills (many per page) — smaller files, faster downloads */
-const STILL_JPEG_QUALITY = 76;
-const STILL_WEBP_QUALITY = 74;
+/** Stills: many per page but quality must hold on Retina; was 76/74 (too soft next to 1200w cap) */
+const STILL_JPEG_QUALITY = 82;
+const STILL_WEBP_QUALITY = 80;
 
 async function exists(p) {
   try {
@@ -26,6 +28,28 @@ async function exists(p) {
   } catch {
     return false;
   }
+}
+
+/**
+ * Lossy previews often look "grey" vs PNG masters because of chroma subsampling (JPEG 4:2:0, WebP YUV420).
+ * - JPEG: chromaSubsampling 4:4:4 keeps full color detail at the same pixel dimensions.
+ * - WebP: smartSubsample true = higher-quality chroma (libvips "smart" subsampling).
+ * previewTier: small quality bump for the smallest assets only — same pixel dimensions, richer color.
+ */
+function lossyEncodeOptions(webpQ, jpegQ, { previewTier = false } = {}) {
+  const qBoost = previewTier ? 3 : 0;
+  return {
+    webp: {
+      quality: Math.min(webpQ + qBoost, 95),
+      smartSubsample: true,
+      ...(previewTier ? { preset: "picture" } : {}),
+    },
+    jpeg: {
+      quality: Math.min(jpegQ + qBoost, 95),
+      mozjpeg: true,
+      chromaSubsampling: "4:4:4",
+    },
+  };
 }
 
 /** Posters & stills: max width, preserve aspect ratio */
@@ -43,9 +67,21 @@ async function writeVariants(srcPath, outDir, stem, widths, quality = {}) {
       .toBuffer();
     const webpPath = path.join(outDir, `${stem}-${w}w.webp`);
     const jpgPath = path.join(outDir, `${stem}-${w}w.jpg`);
-    await sharp(resized).webp({ quality: webpQ }).toFile(webpPath);
-    await sharp(resized).jpeg({ quality: jpegQ, mozjpeg: true }).toFile(jpgPath);
-    console.log("Wrote", webpPath, jpgPath);
+
+    // Preview tier (400w): same source file as full PNG overlay, but lossy JPEG/WebP still
+    // drifts vs masters (ICC + compression). Use lossless WebP + PNG only — no -400w.jpg.
+    // (800w/1200w… remain lossy for size; they are not used by the homepage/stills <picture>.)
+    if (w === 400) {
+      const pngPath = path.join(outDir, `${stem}-400w.png`);
+      await sharp(resized).webp({ lossless: true, effort: 4 }).toFile(webpPath);
+      await sharp(resized).png({ compressionLevel: 9, adaptiveFiltering: true }).toFile(pngPath);
+      console.log("Wrote", webpPath, pngPath);
+    } else {
+      const opts = lossyEncodeOptions(webpQ, jpegQ, { previewTier: false });
+      await sharp(resized).webp(opts.webp).toFile(webpPath);
+      await sharp(resized).jpeg(opts.jpeg).toFile(jpgPath);
+      console.log("Wrote", webpPath, jpgPath);
+    }
   }
 }
 
@@ -66,17 +102,24 @@ async function writeSquarePhotoVariants(srcPath, outDir, stem, sidePx) {
       .toBuffer();
     const webpPath = path.join(outDir, `${stem}-${w}w.webp`);
     const jpgPath = path.join(outDir, `${stem}-${w}w.jpg`);
-    await sharp(resized).webp({ quality: WEBP_QUALITY }).toFile(webpPath);
-    await sharp(resized)
-      .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
-      .toFile(jpgPath);
-    console.log("Wrote", webpPath, jpgPath);
+    const opts = lossyEncodeOptions(WEBP_QUALITY, JPEG_QUALITY, { previewTier: w === 320 });
+    if (w === 320) {
+      await sharp(resized).webp({ lossless: true, effort: 4 }).toFile(webpPath);
+      const pngPath = path.join(outDir, `${stem}-${w}w.png`);
+      await sharp(resized).png({ compressionLevel: 9, adaptiveFiltering: true }).toFile(pngPath);
+      await sharp(resized).jpeg(opts.jpeg).toFile(jpgPath);
+      console.log("Wrote", webpPath, pngPath, jpgPath);
+    } else {
+      await sharp(resized).webp(opts.webp).toFile(webpPath);
+      await sharp(resized).jpeg(opts.jpeg).toFile(jpgPath);
+      console.log("Wrote", webpPath, jpgPath);
+    }
   }
 }
 
 const STILL_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp", ".PNG", ".JPG", ".JPEG", ".WEBP"]);
 
-/** Film stills: images/stills/<movieID>/* -> images/stills/<movieID>/generated/<stem>-{400|800|1200}w.{webp,jpg} */
+/** Film stills: images/stills/<movieID>/* -> images/stills/<movieID>/generated/<stem>-{400…2000}w.{webp,jpg} */
 async function processStills() {
   const stillsRoot = path.join(ROOT, "images", "stills");
   if (!(await exists(stillsRoot))) {
@@ -98,7 +141,7 @@ async function processStills() {
       const stem = path.basename(f.name, ext);
       const srcPath = path.join(movieDir, f.name);
       console.log("Still source:", srcPath);
-      await writeVariants(srcPath, outDir, stem, POSTER_WIDTHS, {
+      await writeVariants(srcPath, outDir, stem, STILL_WIDTHS, {
         jpegQuality: STILL_JPEG_QUALITY,
         webpQuality: STILL_WEBP_QUALITY,
       });

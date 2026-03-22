@@ -28,6 +28,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+<script src="/assets/js/progressive-png-overlay.js" defer></script>
 </head>
 <body class="layout-home"><header class="site-header">
 
@@ -82,21 +83,29 @@
         <div class="home">
 <div class="home-page-grid-container"><div class="home-page-grid-item"><a href="/movies/stallion.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/stallion-400w.webp 400w, /images/movie_posters/generated/stallion-800w.webp 800w, /images/movie_posters/generated/stallion-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/stallion-400w.jpg 400w, /images/movie_posters/generated/stallion-800w.jpg 800w, /images/movie_posters/generated/stallion-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/stallion-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/stallion-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/stallion-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="eager" fetchpriority="high"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/stallion-800w.jpg"
-    srcset="/images/movie_posters/generated/stallion-400w.jpg 400w, /images/movie_posters/generated/stallion-800w.jpg 800w, /images/movie_posters/generated/stallion-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/stallion.png"
+    alt=""
     decoding="async"
-    fetchpriority="high"
+    loading="eager" fetchpriority="high"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Stallion</p>
@@ -106,21 +115,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/grimaldi.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/grimaldi-400w.webp 400w, /images/movie_posters/generated/grimaldi-800w.webp 800w, /images/movie_posters/generated/grimaldi-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/grimaldi-400w.jpg 400w, /images/movie_posters/generated/grimaldi-800w.jpg 800w, /images/movie_posters/generated/grimaldi-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/grimaldi-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/grimaldi-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/grimaldi-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/grimaldi-800w.jpg"
-    srcset="/images/movie_posters/generated/grimaldi-400w.jpg 400w, /images/movie_posters/generated/grimaldi-800w.jpg 800w, /images/movie_posters/generated/grimaldi-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/grimaldi.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Grimaldi</p>
@@ -130,21 +147,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/bobo.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/bobo-400w.webp 400w, /images/movie_posters/generated/bobo-800w.webp 800w, /images/movie_posters/generated/bobo-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/bobo-400w.jpg 400w, /images/movie_posters/generated/bobo-800w.jpg 800w, /images/movie_posters/generated/bobo-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/bobo-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/bobo-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/bobo-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/bobo-800w.jpg"
-    srcset="/images/movie_posters/generated/bobo-400w.jpg 400w, /images/movie_posters/generated/bobo-800w.jpg 800w, /images/movie_posters/generated/bobo-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/bobo.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Bobo</p>
@@ -154,21 +179,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/true.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/true-400w.webp 400w, /images/movie_posters/generated/true-800w.webp 800w, /images/movie_posters/generated/true-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/true-400w.jpg 400w, /images/movie_posters/generated/true-800w.jpg 800w, /images/movie_posters/generated/true-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/true-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/true-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/true-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/true-800w.jpg"
-    srcset="/images/movie_posters/generated/true-400w.jpg 400w, /images/movie_posters/generated/true-800w.jpg 800w, /images/movie_posters/generated/true-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/true.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">True Story</p>
@@ -178,21 +211,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/dandies.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/dandies-400w.webp 400w, /images/movie_posters/generated/dandies-800w.webp 800w, /images/movie_posters/generated/dandies-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/dandies-400w.jpg 400w, /images/movie_posters/generated/dandies-800w.jpg 800w, /images/movie_posters/generated/dandies-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/dandies-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/dandies-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/dandies-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/dandies-800w.jpg"
-    srcset="/images/movie_posters/generated/dandies-400w.jpg 400w, /images/movie_posters/generated/dandies-800w.jpg 800w, /images/movie_posters/generated/dandies-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/dandies.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Dandies of LA</p>
@@ -202,21 +243,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/puppy.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/puppy-400w.webp 400w, /images/movie_posters/generated/puppy-800w.webp 800w, /images/movie_posters/generated/puppy-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/puppy-400w.jpg 400w, /images/movie_posters/generated/puppy-800w.jpg 800w, /images/movie_posters/generated/puppy-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/puppy-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/puppy-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/puppy-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/puppy-800w.jpg"
-    srcset="/images/movie_posters/generated/puppy-400w.jpg 400w, /images/movie_posters/generated/puppy-800w.jpg 800w, /images/movie_posters/generated/puppy-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/puppy.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Puppy</p>
@@ -226,21 +275,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/tet.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/tet-400w.webp 400w, /images/movie_posters/generated/tet-800w.webp 800w, /images/movie_posters/generated/tet-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/tet-400w.jpg 400w, /images/movie_posters/generated/tet-800w.jpg 800w, /images/movie_posters/generated/tet-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/tet-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/tet-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/tet-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/tet-800w.jpg"
-    srcset="/images/movie_posters/generated/tet-400w.jpg 400w, /images/movie_posters/generated/tet-800w.jpg 800w, /images/movie_posters/generated/tet-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/tet.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">tête-à-tête</p>
@@ -250,21 +307,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/laughingmatter.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/laughingmatter-400w.webp 400w, /images/movie_posters/generated/laughingmatter-800w.webp 800w, /images/movie_posters/generated/laughingmatter-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/laughingmatter-400w.jpg 400w, /images/movie_posters/generated/laughingmatter-800w.jpg 800w, /images/movie_posters/generated/laughingmatter-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/laughingmatter-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/laughingmatter-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/laughingmatter-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/laughingmatter-800w.jpg"
-    srcset="/images/movie_posters/generated/laughingmatter-400w.jpg 400w, /images/movie_posters/generated/laughingmatter-800w.jpg 800w, /images/movie_posters/generated/laughingmatter-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/laughingmatter.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Laughing Matter</p>
@@ -274,21 +339,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/mannequin.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/mannequin-400w.webp 400w, /images/movie_posters/generated/mannequin-800w.webp 800w, /images/movie_posters/generated/mannequin-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/mannequin-400w.jpg 400w, /images/movie_posters/generated/mannequin-800w.jpg 800w, /images/movie_posters/generated/mannequin-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/mannequin-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/mannequin-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/mannequin-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/mannequin-800w.jpg"
-    srcset="/images/movie_posters/generated/mannequin-400w.jpg 400w, /images/movie_posters/generated/mannequin-800w.jpg 800w, /images/movie_posters/generated/mannequin-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/mannequin.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Manifest Mannequin_(1987)</p>
@@ -298,21 +371,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/babeinarms.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/babeinarms-400w.webp 400w, /images/movie_posters/generated/babeinarms-800w.webp 800w, /images/movie_posters/generated/babeinarms-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/babeinarms-400w.jpg 400w, /images/movie_posters/generated/babeinarms-800w.jpg 800w, /images/movie_posters/generated/babeinarms-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/babeinarms-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/babeinarms-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/babeinarms-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/babeinarms-800w.jpg"
-    srcset="/images/movie_posters/generated/babeinarms-400w.jpg 400w, /images/movie_posters/generated/babeinarms-800w.jpg 800w, /images/movie_posters/generated/babeinarms-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/babeinarms.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Babe in Arms</p>
@@ -322,21 +403,29 @@
           </a>
         </div><div class="home-page-grid-item"><a href="/movies/oleander.html">
             <div class ="movie-posters">
-              <picture>
-  <source type="image/webp" srcset="/images/movie_posters/generated/oleander-400w.webp 400w, /images/movie_posters/generated/oleander-800w.webp 800w, /images/movie_posters/generated/oleander-1200w.webp 1200w" sizes="(max-width: 600px) 100vw, 50vw">
-  <source type="image/jpeg" srcset="/images/movie_posters/generated/oleander-400w.jpg 400w, /images/movie_posters/generated/oleander-800w.jpg 800w, /images/movie_posters/generated/oleander-1200w.jpg 1200w" sizes="(max-width: 600px) 100vw, 50vw">
+              <div class="progressive-image-stack progressive-image-stack--poster" data-png-overlay>
+  <picture>
+    <source type="image/webp" srcset="/images/movie_posters/generated/oleander-400w.webp 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <source type="image/png" srcset="/images/movie_posters/generated/oleander-400w.png 400w" sizes="(max-width: 600px) 100vw, 50vw">
+    <img
+      src="/images/movie_posters/generated/oleander-400w.png"
+      alt="Movie poster — link to film page"
+      class="progressive-image__preview home-page-movie-image"
+      width="1200"
+      height="510"
+      decoding="async"
+      loading="lazy"
+    >
+  </picture>
   <img
-    src="/images/movie_posters/generated/oleander-800w.jpg"
-    srcset="/images/movie_posters/generated/oleander-400w.jpg 400w, /images/movie_posters/generated/oleander-800w.jpg 800w, /images/movie_posters/generated/oleander-1200w.jpg 1200w"
-    sizes="(max-width: 600px) 100vw, 50vw"
-    alt="Movie poster — link to film page"
-    class="home-page-movie-image"
-    width="1200"
-    height="510"
+    class="progressive-image__original home-page-movie-image"
+    src="/images/movie_posters/oleander.png"
+    alt=""
     decoding="async"
     loading="lazy"
+    aria-hidden="true"
   >
-</picture>
+</div>
 
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">Oleander</p>
