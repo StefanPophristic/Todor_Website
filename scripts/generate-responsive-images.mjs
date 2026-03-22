@@ -15,6 +15,9 @@ const POSTER_WIDTHS = [400, 800, 1200];
 const PHOTO_WIDTHS = [320, 640, 960];
 const JPEG_QUALITY = 82;
 const WEBP_QUALITY = 80;
+/** Slightly lower for film stills (many per page) — smaller files, faster downloads */
+const STILL_JPEG_QUALITY = 76;
+const STILL_WEBP_QUALITY = 74;
 
 async function exists(p) {
   try {
@@ -25,8 +28,10 @@ async function exists(p) {
   }
 }
 
-/** Movie posters: max width, preserve aspect ratio */
-async function writeVariants(srcPath, outDir, stem, widths) {
+/** Posters & stills: max width, preserve aspect ratio */
+async function writeVariants(srcPath, outDir, stem, widths, quality = {}) {
+  const webpQ = quality.webpQuality ?? WEBP_QUALITY;
+  const jpegQ = quality.jpegQuality ?? JPEG_QUALITY;
   await fs.mkdir(outDir, { recursive: true });
   for (const w of widths) {
     const resized = await sharp(srcPath)
@@ -38,8 +43,8 @@ async function writeVariants(srcPath, outDir, stem, widths) {
       .toBuffer();
     const webpPath = path.join(outDir, `${stem}-${w}w.webp`);
     const jpgPath = path.join(outDir, `${stem}-${w}w.jpg`);
-    await sharp(resized).webp({ quality: WEBP_QUALITY }).toFile(webpPath);
-    await sharp(resized).jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toFile(jpgPath);
+    await sharp(resized).webp({ quality: webpQ }).toFile(webpPath);
+    await sharp(resized).jpeg({ quality: jpegQ, mozjpeg: true }).toFile(jpgPath);
     console.log("Wrote", webpPath, jpgPath);
   }
 }
@@ -93,7 +98,10 @@ async function processStills() {
       const stem = path.basename(f.name, ext);
       const srcPath = path.join(movieDir, f.name);
       console.log("Still source:", srcPath);
-      await writeVariants(srcPath, outDir, stem, POSTER_WIDTHS);
+      await writeVariants(srcPath, outDir, stem, POSTER_WIDTHS, {
+        jpegQuality: STILL_JPEG_QUALITY,
+        webpQuality: STILL_WEBP_QUALITY,
+      });
     }
   }
 }

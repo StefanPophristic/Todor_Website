@@ -31,17 +31,21 @@ layout: base
             <div class="movie-page-stills" aria-label="Film stills">
               {%- assign stills_prefix = 'images/stills/' | append: movie.movieID | append: '/' -%}
               {%- assign sorted_static = site.static_files | sort: 'path' -%}
+              {%- assign still_index = 0 -%}
               {%- for f in sorted_static -%}
                 {%- assign rp = f.path -%}
                 {%- if rp contains stills_prefix -%}
                   {%- unless rp contains '/generated/' -%}
                   {%- assign ext = f.extname | downcase -%}
+                  {%- if ext == '.gif' or ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.webp' -%}
+                    {%- assign still_index = still_index | plus: 1 -%}
+                  {%- endif -%}
                   {%- if ext == '.gif' -%}
-              <img class="movie-page-still" src="{{ rp | relative_url }}" alt="" loading="lazy" decoding="async" />
+              <img class="movie-page-still" src="{{ rp | relative_url }}" alt="" decoding="async"{% if still_index == 1 %} loading="eager" fetchpriority="high"{% elsif still_index <= 6 %} loading="eager"{% else %} loading="lazy"{% endif %} />
                   {%- elsif ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.webp' -%}
                     {%- assign still_fn = rp | split: '/' | last -%}
                     {%- assign still_stem = still_fn | replace: f.extname, '' -%}
-              {% include responsive-movie-still.html movie_id=movie.movieID stem=still_stem %}
+              {% include responsive-movie-still.html movie_id=movie.movieID stem=still_stem still_index=still_index %}
                   {%- endif -%}
                   {%- endunless -%}
                 {%- endif -%}

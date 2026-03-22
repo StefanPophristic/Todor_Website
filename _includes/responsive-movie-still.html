@@ -1,6 +1,7 @@
 {%- comment -%}
   movie_id: movies.yml movieID (folder under images/stills/)
   stem: filename without extension (e.g. Stallion still 1)
+  still_index: 1-based; first still eager+high priority, 2–6 eager (parallel fetch), rest lazy
 {%- endcomment -%}
 {%- assign mid = include.movie_id -%}
 {%- assign stem = include.stem -%}
@@ -20,7 +21,7 @@
     sizes="(max-width: 1000px) 100vw, 1000px"
     alt=""
     class="movie-page-still"
-    loading="lazy"
     decoding="async"
+    {% if include.still_index == 1 %}loading="eager" fetchpriority="high"{% elsif include.still_index <= 6 %}loading="eager"{% else %}loading="lazy"{% endif %}
   >
 </picture>
