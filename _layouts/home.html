@@ -15,10 +15,11 @@ layout: base
   {%- for movie in allMovies -%}
     {%- if movie.movieID != null -%}
         <div class="home-page-grid-item">
-          <a href="/movies/{{ movie.movieID}}.html">
-            <!-- Something might need to be pre-pended here to make the links work -->
+          {%- assign movie_href = '/movies/' | append: movie.movieID | append: '.html' -%}
+          {%- assign poster_src = '/images/movie_posters/' | append: movie.movieID | append: '.png' -%}
+          <a href="{{ movie_href | relative_url }}">
             <div class ="movie-posters">
-              <img src="/images/movie_posters/{{ movie.movieID }}.png" alt="Movie Poster, Clickable link to Movie Page" class="home-page-movie-image" >
+              <img src="{{ poster_src | relative_url }}" alt="Movie Poster, Clickable link to Movie Page" class="home-page-movie-image" >
               <div class="home-page-movie-overlay-text">
                 <p class="home-page-movie-name">{{ movie.name }}</p>
                 <p class="home-page-movie-meta">{{ movie.year }} | {{ movie.role }}</p>
