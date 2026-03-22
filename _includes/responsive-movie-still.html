@@ -1,0 +1,26 @@
+{%- comment -%}
+  movie_id: movies.yml movieID (folder under images/stills/)
+  stem: filename without extension (e.g. Stallion still 1)
+{%- endcomment -%}
+{%- assign mid = include.movie_id -%}
+{%- assign stem = include.stem -%}
+{%- assign base = '/images/stills/' | append: mid | append: '/generated/' | append: stem -%}
+{%- assign w400w = base | append: '-400w.webp' | relative_url -%}
+{%- assign w800w = base | append: '-800w.webp' | relative_url -%}
+{%- assign w1200w = base | append: '-1200w.webp' | relative_url -%}
+{%- assign j400 = base | append: '-400w.jpg' | relative_url -%}
+{%- assign j800 = base | append: '-800w.jpg' | relative_url -%}
+{%- assign j1200 = base | append: '-1200w.jpg' | relative_url -%}
+<picture>
+  <source type="image/webp" srcset="{{ w400w }} 400w, {{ w800w }} 800w, {{ w1200w }} 1200w" sizes="(max-width: 1000px) 100vw, 1000px">
+  <source type="image/jpeg" srcset="{{ j400 }} 400w, {{ j800 }} 800w, {{ j1200 }} 1200w" sizes="(max-width: 1000px) 100vw, 1000px">
+  <img
+    src="{{ j800 }}"
+    srcset="{{ j400 }} 400w, {{ j800 }} 800w, {{ j1200 }} 1200w"
+    sizes="(max-width: 1000px) 100vw, 1000px"
+    alt=""
+    class="movie-page-still"
+    loading="lazy"
+    decoding="async"
+  >
+</picture>

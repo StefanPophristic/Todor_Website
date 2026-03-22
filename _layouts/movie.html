@@ -34,10 +34,16 @@ layout: base
               {%- for f in sorted_static -%}
                 {%- assign rp = f.path -%}
                 {%- if rp contains stills_prefix -%}
+                  {%- unless rp contains '/generated/' -%}
                   {%- assign ext = f.extname | downcase -%}
-                  {%- if ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.webp' or ext == '.gif' -%}
+                  {%- if ext == '.gif' -%}
               <img class="movie-page-still" src="{{ rp | relative_url }}" alt="" loading="lazy" decoding="async" />
+                  {%- elsif ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.webp' -%}
+                    {%- assign still_fn = rp | split: '/' | last -%}
+                    {%- assign still_stem = still_fn | replace: f.extname, '' -%}
+              {% include responsive-movie-still.html movie_id=movie.movieID stem=still_stem %}
                   {%- endif -%}
+                  {%- endunless -%}
                 {%- endif -%}
               {%- endfor -%}
             </div>

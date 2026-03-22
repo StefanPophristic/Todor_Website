@@ -546,6 +546,11 @@ body.layout-movie .movie-page-column .movie-page-stills {
   gap: 1rem;
 }
 
+body.layout-movie .movie-page-stills picture {
+  display: block;
+  width: 100%;
+}
+
 body.layout-movie .movie-page-stills .movie-page-still {
   width: 100%;
   height: auto;

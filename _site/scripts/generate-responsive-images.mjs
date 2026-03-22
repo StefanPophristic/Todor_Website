@@ -1,7 +1,7 @@
 /**
- * Builds WebP + JPEG variants for movie posters and About/Contact photos.
+ * Builds WebP + JPEG variants for movie posters, film stills, and About/Contact photos.
  * Run: npm install && npm run generate:images
- * Outputs under images/movie_posters/generated/ and images/photos/generated/
+ * Outputs under images/movie_posters/generated/, images/stills/<movieID>/generated/, images/photos/generated/
  */
 import fs from "fs/promises";
 import path from "path";
@@ -69,6 +69,35 @@ async function writeSquarePhotoVariants(srcPath, outDir, stem, sidePx) {
   }
 }
 
+const STILL_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp", ".PNG", ".JPG", ".JPEG", ".WEBP"]);
+
+/** Film stills: images/stills/<movieID>/* -> images/stills/<movieID>/generated/<stem>-{400|800|1200}w.{webp,jpg} */
+async function processStills() {
+  const stillsRoot = path.join(ROOT, "images", "stills");
+  if (!(await exists(stillsRoot))) {
+    console.warn("Skip stills: missing", stillsRoot);
+    return;
+  }
+  const movieDirs = await fs.readdir(stillsRoot, { withFileTypes: true });
+  for (const dirEnt of movieDirs) {
+    if (!dirEnt.isDirectory()) continue;
+    if (dirEnt.name.startsWith(".")) continue;
+    const movieDir = path.join(stillsRoot, dirEnt.name);
+    const outDir = path.join(movieDir, "generated");
+    const files = await fs.readdir(movieDir, { withFileTypes: true });
+    for (const f of files) {
+      if (!f.isFile()) continue;
+      if (f.name.startsWith(".")) continue;
+      const ext = path.extname(f.name);
+      if (!STILL_EXTS.has(ext)) continue;
+      const stem = path.basename(f.name, ext);
+      const srcPath = path.join(movieDir, f.name);
+      console.log("Still source:", srcPath);
+      await writeVariants(srcPath, outDir, stem, POSTER_WIDTHS);
+    }
+  }
+}
+
 async function processPosters() {
   const dir = path.join(ROOT, "images", "movie_posters");
   const outDir = path.join(dir, "generated");
@@ -103,6 +132,7 @@ async function processPhoto(relPath, stem, outDir, widths) {
 
 async function main() {
   await processPosters();
+  await processStills();
   const photosDir = path.join(ROOT, "images", "photos", "generated");
   await processPhoto("images/about_photo.jpeg", "about_photo", photosDir, PHOTO_WIDTHS);
   await processPhoto("images/contact_photo.jpeg", "contact_photo", photosDir, PHOTO_WIDTHS);

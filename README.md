@@ -51,6 +51,8 @@ npm run generate:images
 
 Commit the new files under **`images/movie_posters/generated/`** (or rely on CI to regenerate on deploy—run the command locally too so `jekyll serve` shows posters).
 
+**Film stills** (movies with `stills: true` and no YouTube embed): put PNG / JPEG / WebP files in **`images/stills/<movieID>/`** (same `movieID` as in `movies.yml`). Run **`npm run generate:images`** so responsive WebP + JPEG variants are written under **`images/stills/<movieID>/generated/`**. **GIF** files are left as-is (single file, not resized).
+
 4. **Create a file in the movies folder**
 
 The file should be named `[movieID].md`.
